@@ -1,0 +1,47 @@
+info:
+    app:
+        desc: Fithnitek application
+        name: Fithnitek
+        contact:
+           name: Annabi
+           email: annabi.mabrouka99@gmail
+        license: COMMERCIAL
+        license-url: 'https://www.mss.tn/LICENSE-1-2'
+        version: 1.0.1
+
+server:
+  port: ${PORT:8086}
+spring:  
+  application:
+    name: Users-service
+  servlet:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 15MB
+
+  # Database
+  datasource: 
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      pool-name: ':::::::::::: Hikari DS Spades_1-MS POOL ::::::::::::'
+      connection-timeout: 60000
+      maximum-pool-size: 30
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/FithnitekDataBase
+    username: postgres
+
+    password: 123
+
+  
+
+  jpa:
+    hibernate:
+      ddl-auto: update # When you launch the application for the first time - switch "none" at "create"
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: false
+    show-sql : false
+    properties:
+      hibernate:
+        format_sql: true
+ 
